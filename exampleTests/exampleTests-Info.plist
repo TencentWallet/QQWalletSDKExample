@@ -18,5 +18,16 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>asdfasdf</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.tencent.qqwallet.demo2</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

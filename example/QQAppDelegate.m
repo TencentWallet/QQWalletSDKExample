@@ -7,12 +7,13 @@
 //
 
 #import "QQAppDelegate.h"
-
+#import <QQWalletSDK.h>
 @implementation QQAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [QQWalletSDK registerQQWalletApplication:@"234" urlScheme:@"com.tencent.qqwallet.demo2" name:@"aa"];
     return YES;
 }
 							
@@ -38,6 +39,15 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([QQWalletSDK QQWalletSDKHanldeApplication:application openURL:url  sourceApplication:sourceApplication annotation:annotation]) {
+        return YES;
+    }
+    
+    
+    return YES;
+}
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

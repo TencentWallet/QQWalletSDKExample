@@ -1,0 +1,1 @@
+../../QQWalletSDK/QQWalletSDK/Classes/sdk/QWServerPayTask.h
